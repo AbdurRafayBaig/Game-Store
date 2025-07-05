@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - Confirm Order</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">G</span>
+                <span class="logo-text">GAME<span class="logo-store">STORE</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="cart.html">CART</a>
+                <a href="#" class="active">ORDERS</a>
+                <a href="#">SUPPORT</a>
+            </div>
+            <div class="nav-right">
+                <div class="user-menu" id="userMenu">
+                    <span class="username">Login</span>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="order-page">
+        <h1>Confirm Your Order</h1>
+        
+        <div class="order-container">
+            <section class="order-items">
+                <h2>Selected Items</h2>
+                <div id="selectedItemsContainer">
+                    <!-- Selected items will be loaded here -->
+                </div>
+            </section>
+            
+            <section class="payment-section">
+                <h2>Payment Method</h2>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="creditCard" name="paymentMethod" value="Credit Card">
+                        <label for="creditCard">Credit Card</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="paypal" name="paymentMethod" value="PayPal">
+                        <label for="paypal">PayPal</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="bankTransfer" name="paymentMethod" value="Bank Transfer">
+                        <label for="bankTransfer">Bank Transfer</label>
+                    </div>
+                </div>
+                
+                <div id="ibanSection" class="hidden">
+                    <label for="iban">IBAN:</label>
+                    <input type="text" id="iban" placeholder="DE89 3704 0044 0532 0130 00" 
+                           pattern="[A-Z]{2}[0-9]{2}[A-Z0-9]{1,30}" required>
+                    <small>Format: Country code (2 letters) + Check digits (2 numbers) + IBAN (up to 30 chars)</small>
+                </div>
+            </section>
+            
+            <section class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="orderSubtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span id="orderTax">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="orderTotal">$0.00</span>
+                </div>
+                
+                <div class="order-actions">
+                    <button id="cancelOrder" class="btn secondary">Cancel</button>
+                    <button id="confirmOrder" class="btn primary">Confirm Order</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon">G</span>
+                <span class="logo-text">GAME<span class="logo-store">STORE</span></span>
+            </div>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Refunds</a>
+            </div>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-discord"></i>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 GameStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="order.js"></script>
+</body>
+</html>

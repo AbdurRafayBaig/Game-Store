@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - Your Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">G</span>
+                <span class="logo-text">GAME<span class="logo-store">STORE</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="cart.html" class="active">CART</a>
+                <a href="order.html">ORDERS</a>
+                <a href="#">ABOUT US</a>
+            </div>
+            <div class="nav-right">
+                <div class="user-menu" id="userMenu">
+                    <span class="username">Login</span>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cart-page">
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-container" id="cartContainer">
+            <!-- Cart items will be loaded here -->
+             <!-- Inside cart-container div -->
+            <div class="cart-item" data-game-id="${item.Game_ID}">
+                <input type="checkbox" class="item-selector" checked data-price="${item.Price}">
+                <img src="${item.ImageURL}" alt="${item.Title}" class="cart-item-image">
+                <!-- Rest of the item HTML remains same -->
+            </div>
+            <div class="empty-cart-message">
+                Your cart is empty. <a href="index.html">Browse games</a>
+            </div>
+        </div>
+        
+        <div class="cart-summary" id="cartSummary">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax</span>
+                <span id="tax">$0.00</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon">G</span>
+                <span class="logo-text">GAME<span class="logo-store">STORE</span></span>
+            </div>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-discord"></i>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 GameStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
